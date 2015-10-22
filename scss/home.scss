@@ -1,0 +1,126 @@
+$base-background: #ececec;
+$base-color: #00aec8;
+@import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+@mixin transform($transform){
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+@mixin inline-list(){
+  list-style-type: none;
+  &> li{
+    position: relative;
+    display: inline-block;
+  }
+}
+@mixin vertical-center{
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+@mixin horizontal-center{
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+@mixin center{
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+.model-image{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+.image-container img{
+  position: relative;
+  width: 800px;
+  max-width: 100vw;
+  margin-top: 10px;
+  height: 500px;
+  @include horizontal-center();
+}
+.state-title{
+  position: relative;
+  font-weight: 700;
+}
+.customer-choice{
+  li{
+    position: relative;
+    display: inline-block;
+    margin-right: 1em;
+    cursor: pointer;
+    width: 100px;
+    & div{
+      position: relative;
+      height: 30px;
+      width: 30px;
+      margin: auto;
+      border-radius: 100%;
+    }
+  }
+}
+.process-tracker{
+  position: relative;
+  width: 800px;
+  height: 50px;
+  @include horizontal-center();
+  text-align: center;
+  & li{
+    position: relative;
+    width: 75px;
+    height: 50px;
+    line-height: 50%;
+    display: inline-block;
+    &:last-child{
+      & div{
+        background: none;
+      }
+    }
+    &.active{
+      & div{
+        background: #f39c12;
+      }
+      & div.circle{
+        background: #f39c12;
+      }
+    }
+    & div{
+      position: absolute;
+      width: 70px;
+      height: 2px;
+      background-color: black;
+      @include vertical-center();
+    }
+    & div.circle{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      border: 3px solid #f39c12;
+      background: white;
+      top: 15px;
+      left: -15px;
+      transform: none;
+      cursor: pointer;
+      &:after{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #f39c12;
+        content: '';
+        top: 2px;
+        left: 2px;
+        border-radius: 100%;
+      }
+    }
+  }
+}
