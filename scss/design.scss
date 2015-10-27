@@ -1,0 +1,120 @@
+@import "variable";
+.image-container{
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  display: inline-block;
+  & img{
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.title{
+  font-size: 16px;
+  font-weight: 400;
+  color: $primary;
+  margin-bottom: 1em;
+}
+.material-set{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-left: 1em;
+  cursor: pointer;
+  &:focus, &:active{
+    outline: 0;
+  }
+}
+.setting-tools{
+  padding: 1em;
+}
+.main-content{
+  position: relative;
+  width: 400px;
+  height: auto;
+  text-align: center;
+  & .feature{
+    margin-bottom: 1em;
+  }
+}
+.design-content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  & .slide-container{
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+  }
+  & .image-container{
+    top: 0;
+    left: 0;
+  }
+  & .setting-tools{
+    position: absolute;
+    z-index: 10;
+    bottom: 0.5em;
+    left: 0.5em;
+    color: white;
+    width: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  & .selected-choice{
+    position: absolute;
+    top: 5em;
+    left: 1em;
+    color: $primary;
+    padding: 0.5em;
+    background-color: rgba(0,0,0,0.5);
+    width: auto;
+    height: auto;
+    font-size: 0.8em;
+  }
+  & .client-choice{
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0.5);
+    & .client-number{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-weight: 400;
+      font-size: 1em;
+      color: white;
+    }
+    & i{
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $primary;
+      font-size: 1em;
+    }
+  }
+  & button{
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+}

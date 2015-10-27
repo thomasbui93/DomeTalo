@@ -1,29 +1,26 @@
 <div>
-    <ul class="process-tracker">
-        <li ui-sref-active="active">
-            <a ui-sref="design.general">
-                <div></div>
-                <div class="circle"></div>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a ui-sref="design.wall">
-                <div></div>
-                <div class="circle"></div>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a ui-sref="design.insideRoof">
-                <div></div>
-                <div class="circle"></div>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a ui-sref="design.floor">
-                <div></div>
-                <div class="circle"></div>
-            </a>
-        </li>
-    </ul>
+    <div class="step-tracker" layout="row" layout-align="center center" layout-padding layout-margin>
+       <div ng-class="{'active': state.done, 'current': state.name===currentState }"
+            ng-repeat="state in states"
+            class="step"
+            ng-click="toState(state)"   >
+           <md-tooltip md-direction="button">
+               {{state.name | uppercase}}
+           </md-tooltip>
+       </div>
+    </div>
     <div ui-view="design"></div>
+    <md-button class="md-fab md-primary md-mini preview-button"  aria-label="Preview" ng-click="showPreviewDialog($event)">
+        <md-tooltip md-direction="top">
+            Preview
+        </md-tooltip>
+        <i class="material-icons ">remove_red_eye</i>
+    </md-button>
+    <md-button class="md-fab md-accent md-mini package-button"  aria-label="Toggle Package"
+               ng-click="togglePackage($event)" ng-if="client.package !== null">
+        <md-tooltip md-direction="top">
+            Change Package
+        </md-tooltip>
+        <i class="material-icons">toys</i>
+    </md-button>
 </div>

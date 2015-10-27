@@ -1,0 +1,88 @@
+<md-content layout-padding layout="column" layout-align="center center">
+    <div flex class="scheduler" style="width: 80vw">
+        <h3 class="md-title">Pick an appointment</h3>
+        <div class="navigation-block" layout="row">
+            <div flex="20" style="text-align: center" ng-click="preWeek()">
+                <md-button class="md-fab md-primary md-mini" >
+                    <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+            </div>
+            <h3 flex>
+                {{ currentRange[0] | amDateFormat:'DD.MM.YYYY'}}-{{ currentRange[4] | amDateFormat:'DD.MM.YYYY'}}
+            </h3>
+            <div flex="20" style="text-align: center">
+                <md-button class="md-fab md-primary md-mini" ng-click="nextWeek()">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+            </div>
+
+        </div>
+        <table>
+            <tr class="header">
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>8:00-10:00</strong>
+                </td>
+                <td ng-repeat="node in gridWeek[0] track by $index"
+                    ng-class="{'busy': !node}"    ng-click="setAppointment(0,$index)">
+                    <i class="material-icons" ng-if="node">&#xE0C9;
+                        <md-tooltip>Available</md-tooltip>
+                    </i>
+                    <i class="material-icons" ng-if="!node">event_busy
+                        <md-tooltip>Unavailable</md-tooltip>
+                    </i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>10:00-12:00</strong>
+                </td>
+                <td ng-repeat="node in gridWeek[1] track by $index"
+                    ng-class="{'busy': !node}"    ng-click="setAppointment(1,$index)">
+                    <i class="material-icons" ng-if="node">&#xE0C9;
+                        <md-tooltip>Available</md-tooltip>
+                    </i>
+                    <i class="material-icons" ng-if="!node">event_busy
+                        <md-tooltip>Unavailable</md-tooltip>
+                    </i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>12:00-14:00</strong>
+                </td>
+                <td ng-repeat="node in gridWeek[2] track by $index"
+                    ng-class="{'busy': !node}"    ng-click="setAppointment(2,$index)">
+                    <i class="material-icons" ng-if="node">&#xE0C9;
+                        <md-tooltip>Available</md-tooltip>
+                    </i>
+                    <i class="material-icons" ng-if="!node">event_busy
+                        <md-tooltip>Unavailable</md-tooltip>
+                    </i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>14:00-16:00</strong>
+                </td>
+                <td ng-repeat="node in gridWeek[3] track by $index"
+                    ng-class="{'busy': !node}"    ng-click="setAppointment(3,$index)">
+                    <i class="material-icons" ng-if="node">&#xE0C9;
+                        <md-tooltip>Available</md-tooltip>
+                    </i>
+                    <i class="material-icons" ng-if="!node">event_busy
+                        <md-tooltip>Unavailable</md-tooltip>
+                    </i>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</md-content>

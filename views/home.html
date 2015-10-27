@@ -1,18 +1,17 @@
-<h1 class="text-center">Design Your Home</h1>
-<h3 class="text-center">Choose a Model</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 col-md-offset-1" ng-click="setModel('alpha')">
-            <img src="images/model1.jpg" class="model-image"/>
-            <p>Alpha Model</p>
+<div class="fullpage">
+    <video class="wpc_video_bg" width="100%" height="auto" preload="auto" loop="" autoplay="" muted="">
+        <source type="video/mp4" src="http://korhonen.me/dometalot/wp-content/uploads/2015/02/sample_video.mp4">
+        <source type="video/ogg" src="http://korhonen.me/dometalot/wp-content/uploads/2015/02/sample_video.ogv">
+        <source type="video/webm" src="http://korhonen.me/dometalot/wp-content/uploads/2015/02/sample_video.webm">
+    </video>
+    <div class="inner-content" layout="column" layout-align="center center">
+        <div class="main-logo">
+            Design Your House
         </div>
-        <div class="col-md-3" ng-click="setModel('beta')">
-            <img src="images/model2.jpg" class="model-image"/>
-            <p>Beta Model</p>
+        <div layout="row" layout-align="center center">
+            <a ui-sref="design.model"><md-button class="md-primary md-raised">Design</md-button></a>
+            <a href="/"><md-button class="md-primary md-raised">Home</md-button></a>
         </div>
-        <div class="col-md-3" ng-click="setModel('omega')">
-            <img src="images/model3.jpg" class="model-image"/>
-            <p>Omega Model</p>
-        </div>
+
     </div>
 </div>

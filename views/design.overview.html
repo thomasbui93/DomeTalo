@@ -1,0 +1,21 @@
+<form>
+    <h2 class="md-title md-primary" style="margin-left: 1em;">Price: {{price}} euros</h2>
+    <md-content style="max-width:800px;height:1300px;padding: 1em; ">
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab ng-repeat="(category, prop) in client" label="{{category}}">
+                <div ng-if="prop.prop === null" style="text-align: center">
+                    Your have not decided yet.
+                </div>
+                <div ng-if="prop.prop !== null" style="text-align: center">
+                    You have chosen {{prop.prop}} for <strong>{{category | uppercase}}</strong>
+                    <br/>
+                    <md-button class="md-primary" ng-click="toState(category)">More</md-button>
+                    <br/>
+                    <img ng-src="{{prop.image}}" ng-if="prop.image!==undefined"/>
+                </div>
+
+            </md-tab>
+        </md-tabs>
+    </md-content>
+
+</form>

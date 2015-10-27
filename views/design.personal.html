@@ -1,0 +1,53 @@
+<md-content layout="row" layout-align="center center" layout-padding layout-margin md-theme="docs-dark">
+    <md-whiteframe class="md-whiteframe-1dp">
+        <form class="personal-form" style="width: 500px; padding: 1em">
+            <div class="md-title">Personal Contact</div>
+            <md-content layout-padding layout="row" layout-sm="column">
+                <md-input-container flex="50">
+                    <label>Title</label>
+                    <input ng-model="user.title">
+                </md-input-container>
+                <md-input-container flex="50">
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email">
+                </md-input-container>
+            </md-content>
+            <md-content layout-padding layout="row" layout-sm="column">
+                <md-input-container flex="50">
+                    <label>First Name</label>
+                    <input ng-model="user.firstName">
+                </md-input-container>
+                <md-input-container flex="50">
+                    <label>Last Name</label>
+                    <input ng-model="user.lastName" type="text">
+                </md-input-container>
+            </md-content>
+            <md-content  layout-padding layout="row" layout-sm="column">
+                <md-input-container flex>
+                    <label>Address</label>
+                    <input ng-model="user.firstName">
+                </md-input-container>
+            </md-content>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>City</label>
+                    <input ng-model="user.city">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>State</label>
+                    <input ng-model="user.city">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Postal Code</label>
+                    <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+                           required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+                </md-input-container>
+            </div>
+            <md-input-container md-no-float>
+                <i class="material-icons">phone</i>
+                <input ng-model="user.phone" type="text" placeholder="Phone Number">
+            </md-input-container>
+            <md-button class="md-raised md-primary">NEXT</md-button>
+        </form>
+    </md-whiteframe>
+</md-content>

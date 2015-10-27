@@ -1,0 +1,35 @@
+@import "variable";
+.scheduler{
+  position: relative;
+  display: table;
+  & h3{
+    text-align: center;
+  }
+  & table{
+    position: relative;
+    width: 100%;
+    height: auto;
+    table-layout:fixed;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+    & th{
+      background-color: $primary;
+      height: 50px;
+      &:first-child{
+        background: transparent;
+      }
+    }
+    & td{
+      text-align: center;
+      height: 100px;
+      background-color: #4CAF50;
+      & i{
+        position: relative;
+        vertical-align: middle;
+        color: white;
+      }
+      &.busy{
+        background-color: #F44336;
+      }
+    }
+  }
+}

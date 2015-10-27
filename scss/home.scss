@@ -1,126 +1,64 @@
-$base-background: #ececec;
-$base-color: #00aec8;
-@import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
-@mixin transition($transition-property, $transition-time, $method) {
-  -webkit-transition: $transition-property $transition-time $method;
-  -moz-transition: $transition-property $transition-time $method;
-  -ms-transition: $transition-property $transition-time $method;
-  -o-transition: $transition-property $transition-time $method;
-  transition: $transition-property $transition-time $method;
-}
-@mixin transform($transform){
-  -webkit-transform: $transform;
-  -moz-transform: $transform;
-  -o-transform: $transform;
-  transform: $transform;
-}
-@mixin inline-list(){
-  list-style-type: none;
-  &> li{
-    position: relative;
-    display: inline-block;
-  }
-}
-@mixin vertical-center{
-  top: 50%;
-  @include transform(translateY(-50%));
-}
-@mixin horizontal-center{
+@import "variable";
+video{
+  position: relative;
   left: 50%;
-  @include transform(translateX(-50%));
-}
-@mixin center{
   top: 50%;
-  left: 50%;
-  @include transform(translate(-50%, -50%));
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
 }
-.model-image{
+div[data-ui-view=""]{
   position: relative;
-  width: 200px;
-  height: 200px;
-  display: block;
+  top: 0;
+  left: 0;
+  display: table;
+  width: 100%;
 }
-.image-container img{
-  position: relative;
-  width: 800px;
-  max-width: 100vw;
-  margin-top: 10px;
-  height: 500px;
-  @include horizontal-center();
-}
-.state-title{
-  position: relative;
-  font-weight: 700;
-}
-.customer-choice{
-  li{
-    position: relative;
-    display: inline-block;
-    margin-right: 1em;
-    cursor: pointer;
-    width: 100px;
-    & div{
-      position: relative;
-      height: 30px;
-      width: 30px;
-      margin: auto;
-      border-radius: 100%;
+.fullpage{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  & .inner-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    & .main-logo{
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      text-transform: uppercase;
+      font-size: 4em;
+      font-weight: bold;
     }
   }
 }
-.process-tracker{
-  position: relative;
-  width: 800px;
-  height: 50px;
-  @include horizontal-center();
+.model-title{
   text-align: center;
-  & li{
-    position: relative;
-    width: 75px;
-    height: 50px;
-    line-height: 50%;
-    display: inline-block;
-    &:last-child{
-      & div{
-        background: none;
-      }
-    }
-    &.active{
-      & div{
-        background: #f39c12;
-      }
-      & div.circle{
-        background: #f39c12;
-      }
-    }
-    & div{
-      position: absolute;
-      width: 70px;
-      height: 2px;
-      background-color: black;
-      @include vertical-center();
-    }
-    & div.circle{
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 100%;
-      border: 3px solid #f39c12;
-      background: white;
-      top: 15px;
-      left: -15px;
-      transform: none;
-      cursor: pointer;
-      &:after{
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #f39c12;
-        content: '';
-        top: 2px;
-        left: 2px;
-        border-radius: 100%;
-      }
-    }
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+}
+.step{
+  position: relative;
+  width: 50px;
+  height: 4px;
+  background-color: black;
+  margin-left: 1em;
+  cursor: pointer;
+  &.current{
+    background-color: $primary;
+  }
+  &.active{
+    background-color: #4CAF50;
+  }
+  &:focus, &:active {
+    outline: 0;
   }
 }

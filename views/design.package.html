@@ -1,0 +1,56 @@
+<div class="text-center small-slogan">
+    Choose your package
+</div>
+<div layout="row" layout-md="row" layout-sm="column" layout-align="center center">
+    <div class="main-content" >
+        <div class="slogan">Standard</div>
+        <div class="feature">
+            Advanced Features
+        </div>
+        <div class="feature">
+            Lorem ipsum dolor
+        </div>
+        <div class="feature">
+            Advanced Features
+        </div>
+        <div class="feature">
+            Lorem ipsum dolor
+        </div>
+        <div class="feature">
+            Advanced Features
+        </div>
+        <div class="feature">
+            Lorem ipsum dolor
+        </div>
+        <div>
+            <md-button class="md-raised md-primary" ng-click="setPackage('standard')">Standard</md-button>
+        </div>
+    </div>
+    <div class="main-content" >
+        <div class="slogan">Plussa</div>
+        <div class="feature">
+            Advanced Features
+        </div>
+        <div class="feature">
+            Lorem ipsum dolor
+        </div>
+        <div class="feature">
+            Advanced Features
+        </div>
+        <div class="feature">
+            Lorem ipsum dolor
+        </div>
+        <div class="feature">
+            Advanced Features
+        </div>
+        <div class="feature">
+            Lorem ipsum dolor
+        </div>
+        <div>
+            <md-button class="md-raised md-primary" ng-click="setPackage('plussa')">Advanced</md-button>
+        </div>
+    </div>
+</div>
+<div layout="row" layout-align="center center" ng-if="package!==null">
+    <div>You have chosen <strong>{{package | uppercase}}</strong> </div>
+</div>

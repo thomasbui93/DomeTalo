@@ -1,12 +1,11 @@
 <div class="design-content">
-    <div class="slide-container" ng-style="{'width': colors.length*100+'vw', 'transform': 'translateX(-'+indexWall*100+'vw)'}">
-        <div class="image-container" ng-repeat="wallImage in wallImages">
-            <img ng-src="{{wallImage}}"/>
+    <div class="slide-container" ng-style="{'width': colors.length*100+'vw', 'transform': 'translateX(-'+indexExterior*100+'vw)'}">
+        <div class="image-container" ng-repeat="exteriorImage in exteriorImages">
+            <img ng-src="{{exteriorImage}}"/>
         </div>
     </div>
-
     <div class="setting-tools">
-        <div class="title">Wall</div>
+        <div class="title">Exterior</div>
         <div layout="row" layout-align="start center">
             <div ng-repeat="color in colors" ng-click="setColor(color)" class="material-set" ng-style="{'background-color': color.code}">
                 <md-tooltip md-direction="top">
@@ -18,14 +17,7 @@
     <div class="selected-choice" ng-if="selectedColor !== null">
         You've chosen {{selectedColor.name}}
     </div>
-    <div class="client-choice">
-        <div class="client-number">112</div>
-        <i class="material-icons">&#xE87D;</i>
-        <md-tooltip md-direction="right">
-            112 people used
-        </md-tooltip>
-    </div>
-    <md-button class="md-raised md-primary" ng-click="setWall($event)">
+    <md-button class="md-raised md-primary" ng-click="setExterior($event)">
         Next
     </md-button>
 </div>

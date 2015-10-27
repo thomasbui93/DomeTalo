@@ -1,0 +1,58 @@
+<div layout="column" layout-align="center center" layout-margin>
+    <div class="slogan">
+        Choose House Model
+    </div>
+    <hr/>
+    <div layout="row" layout-align="center center" layout-sm="column" layout-md="column">
+
+        <md-card>
+            <img src="http://demo.wpcharming.com/construction/wp-content/uploads/2015/02/interior5-600x300.jpg" class="md-card-image" alt="Washed Out">
+            <div class="md-actions" layout="row">
+                <div flex="33"  layout="row" layout-align="center center">
+                    <div class="model-title">Alpha Model</div>
+                </div>
+                <div flex>
+                </div>
+                <div flex="33" >
+                    <md-button class="md-primary" ng-click="showModelDialog($event, 0)">View</md-button>
+                </div>
+            </div>
+        </md-card>
+        <md-card>
+            <img src="http://demo.wpcharming.com/construction/wp-content/uploads/2015/02/slider02-600x300.jpg" class="md-card-image" alt="Washed Out">
+            <div class="md-actions" layout="row">
+                <div flex="33"  layout="row" layout-align="center center">
+                    <div class="model-title">Beta Model</div>
+                </div>
+                <div flex>
+                </div>
+                <div flex="33" >
+                    <md-button class="md-primary" ng-click="showModelDialog($event, 1)">View</md-button>
+                </div>
+            </div>
+        </md-card>
+        <md-card>
+            <img src="http://demo.wpcharming.com/construction/wp-content/uploads/2015/02/house4-600x300.jpg" class="md-card-image" alt="Washed Out">
+            <div class="md-actions" layout="row">
+                <div flex="33"  layout="row" layout-align="center center">
+                    <div class="model-title">Omega Model</div>
+                </div>
+                <div flex>
+                </div>
+                <div flex="33" >
+                    <md-button class="md-primary" ng-click="showModelDialog($event, 2)">View</md-button>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <div layout="row" style="width: 100%" layout-sm="column" layout-md="column">
+        <div flex layout="row" layout-align="center center">
+            <div class="md-subhead" ng-if="clientModel !== null" >
+                <div >Your have chosen {{clientModel}} Model.</div>
+            </div>
+        </div>
+        <div flex="33" layout="row" layout-align="center center">
+            <a ui-sref="design.exterior"><md-button class="md-raised md-primary" ng-click>NEXT</md-button></a>
+        </div>
+    </div>
+</div>

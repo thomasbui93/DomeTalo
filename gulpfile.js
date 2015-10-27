@@ -99,7 +99,7 @@ gulp.task('tdd', function(done) {
 });
 
 gulp.task('watch', function() {
-	livereload.listen();
+	livereload.listen({start: true});
 
 	function handleChanges(stream) {
 		stream.on('change', livereload.changed);
