@@ -27,7 +27,7 @@
     "multipipe": "^0.1.1"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run",
+    "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run"
    
   },
   "author": "Khoa D. Bui",
