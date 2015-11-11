@@ -68,11 +68,20 @@
   & .setting-tools{
     position: absolute;
     z-index: 10;
-    bottom: 0.5em;
-    left: 0.5em;
     color: white;
     width: auto;
-    background-color: rgba(0,0,0,0.5);
+    bottom: 0;
+    & > div{
+      padding: 0.5em;
+      margin: 0.5em;
+      background-color: rgba(0,0,0,0.5);
+      & small{
+        position: relative;
+        right: 0;
+        float: right;
+        font-weight: 400;
+      }
+    }
   }
   & .selected-choice{
     position: absolute;
@@ -117,4 +126,39 @@
     top: 1em;
     right: 1em;
   }
+}
+.button-step{
+  width: 100px;
+  text-align: center;
+}
+.config-step{
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  & >i{
+    font-size: 0.8em;
+  }
+
+}
+.main-menu{
+  width: 70%;
+  transition: all 0.1s ease-in-out;
+  &.shrinked{
+    width: 0;
+    margin-right: 50px;
+  }
+}
+.step-menu{
+  width: 70%;
+  transition: all 0.1s ease-in-out;
+  &.shrinked{
+    width: 0;
+    margin-right: 50px;
+    display: none;
+  }
+}
+
+.control-menu{
+  cursor: pointer;
+  color: $primary;
 }

@@ -350,6 +350,11 @@ $module.controller('DesignController', ['$scope','$rootScope','$state','$mdToast
 
             $scope.price = $rootScope.client.price;
         };
+
+        $scope.showMain = true;
+        $scope.toggleMenu = function () {
+            $scope.showMain = !$scope.showMain;
+        };
     }
 ]).controller('PackageToast', ["$scope", "$mdToast", "package", function ($scope, $mdToast, setPackage) {
     $scope.package = setPackage;
@@ -375,6 +380,15 @@ $module.controller('ExteriorController', ['$scope','$rootScope','$state',
             name: 'orange',
             code: '#FF9800'
         }];
+        $scope.advanceColors = [{
+            name: 'asphalt',
+            code: '#2c3e50'
+        }, {
+            name: "asbestos",
+            code: "#7f8c8d"
+        }];
+        $scope.isAdvance = false;
+
         $scope.selectedColor = $rootScope.client.exterior;
         $scope.exteriBase = "/images/exterior-";
 
@@ -402,6 +416,10 @@ $module.controller('ExteriorController', ['$scope','$rootScope','$state',
         $scope.setExterior = function () {
             $rootScope.client.exterior = $scope.selectedColor;
             $state.go('design.package');
+        };
+
+        $scope.toggleAdvance = function () {
+            $scope.isAdvance = !$scope.isAdvance;
         };
     }]);
 /**

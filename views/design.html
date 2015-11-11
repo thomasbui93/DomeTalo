@@ -1,5 +1,5 @@
 <div>
-    <div class="step-tracker" layout="row" layout-align="center center" layout-padding layout-margin>
+    <!--<div class="step-tracker" layout="row" layout-align="center center" layout-padding layout-margin>
        <div ng-class="{'active': state.done, 'current': state.name===currentState }"
             ng-repeat="state in states"
             class="step"
@@ -9,6 +9,47 @@
            </md-tooltip>
        </div>
     </div>
+    -->
+    <div layout="row"  layout-align="center center" layout-padding layout-margin>
+        <div layout="row" layout-align="center center" layout-padding layout-margin ng-class="{'shrinked': !showMain}" class="main-menu" ngf->
+            <div class="button-step">
+                <md-button class="md-fab md-mini" aria-label="FAB">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+            </div>
+            <div class="button-step">
+                <md-button class="md-fab md-mini" aria-label="FAB">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+            </div>
+            <div class="button-step">
+                <md-button class="md-fab md-mini" aria-label="FAB">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+            </div>
+            <div class="button-step">
+                <md-button class="md-fab md-mini" aria-label="FAB">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+            </div>
+        </div>
+        <div layout="row"  layout-align="center center" layout-padding layout-margin ng-class="{'shrinked': showMain}" class="step-menu">
+            <div class="config-step" ng-repeat="state in states"  ng-click="toState(state)">
+                <i class="material-icons">panorama_fish_eye</i>
+                <md-tooltip md-direction="button">
+                    {{state.name | uppercase}}
+                </md-tooltip>
+            </div>
+
+        </div>
+        <div>
+            <div class="control-menu">
+                <a ng-click="toggleMenu()">Advance</a>
+            </div>
+        </div>
+    </div>
+
+
     <div ui-view="design"></div>
     <md-button class="md-fab md-primary md-mini preview-button"  aria-label="Preview" ng-click="showPreviewDialog($event)">
         <md-tooltip md-direction="top">

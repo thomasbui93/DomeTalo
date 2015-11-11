@@ -19,6 +19,15 @@ $module.controller('ExteriorController', ['$scope','$rootScope','$state',
             name: 'orange',
             code: '#FF9800'
         }];
+        $scope.advanceColors = [{
+            name: 'asphalt',
+            code: '#2c3e50'
+        }, {
+            name: "asbestos",
+            code: "#7f8c8d"
+        }];
+        $scope.isAdvance = false;
+
         $scope.selectedColor = $rootScope.client.exterior;
         $scope.exteriBase = "/images/exterior-";
 
@@ -46,5 +55,9 @@ $module.controller('ExteriorController', ['$scope','$rootScope','$state',
         $scope.setExterior = function () {
             $rootScope.client.exterior = $scope.selectedColor;
             $state.go('design.package');
+        };
+
+        $scope.toggleAdvance = function () {
+            $scope.isAdvance = !$scope.isAdvance;
         };
     }]);

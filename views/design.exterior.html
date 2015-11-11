@@ -4,13 +4,34 @@
             <img ng-src="{{exteriorImage}}"/>
         </div>
     </div>
-    <div class="setting-tools">
-        <div class="title">Exterior</div>
-        <div layout="row" layout-align="start center">
-            <div ng-repeat="color in colors" ng-click="setColor(color)" class="material-set" ng-style="{'background-color': color.code}">
-                <md-tooltip md-direction="top">
-                    {{color.name | uppercase}}
-                </md-tooltip>
+    <div class="setting-tools" layout="row" layout-align="start center" layout-margin layout-padding>
+        <div>
+            <small class="pull-right" ng-click="toggleAdvance()">Advance</small>
+            <div class="title">Exterior</div>
+            <div layout="row" layout-align="start center">
+                <div ng-repeat="color in colors" ng-click="setColor(color)" class="material-set" ng-style="{'background-color': color.code}">
+                    <md-tooltip md-direction="top">
+                        {{color.name | uppercase}}
+                    </md-tooltip>
+                </div>
+            </div>
+            <div layout="row" layout-align="start center" ng-show="isAdvance" layout-margin>
+                <div ng-repeat="color in advanceColors" ng-click="setColor(color)" class="material-set" ng-style="{'background-color': color.code}">
+                    <md-tooltip md-direction="top">
+                        {{color.name | uppercase}}
+                    </md-tooltip>
+                </div>
+            </div>
+        </div>
+        <div>
+            <small class="pull-right">Advance</small>
+            <div class="title">Wall</div>
+            <div layout="row" layout-align="start center">
+                <div ng-repeat="color in colors" ng-click="setColor(color)" class="material-set" ng-style="{'background-color': color.code}">
+                    <md-tooltip md-direction="top">
+                        {{color.name | uppercase}}
+                    </md-tooltip>
+                </div>
             </div>
         </div>
     </div>

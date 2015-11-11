@@ -188,6 +188,11 @@ $module.controller('DesignController', ['$scope','$rootScope','$state','$mdToast
 
             $scope.price = $rootScope.client.price;
         };
+
+        $scope.showMain = true;
+        $scope.toggleMenu = function () {
+            $scope.showMain = !$scope.showMain;
+        };
     }
 ]).controller('PackageToast', ["$scope", "$mdToast", "package", function ($scope, $mdToast, setPackage) {
     $scope.package = setPackage;

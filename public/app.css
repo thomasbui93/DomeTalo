@@ -10002,11 +10002,18 @@ md-tooltip.md-show {
   .design-content .setting-tools {
     position: absolute;
     z-index: 10;
-    bottom: 0.5em;
-    left: 0.5em;
     color: white;
     width: auto;
-    background-color: rgba(0, 0, 0, 0.5); }
+    bottom: 0; }
+    .design-content .setting-tools > div {
+      padding: 0.5em;
+      margin: 0.5em;
+      background-color: rgba(0, 0, 0, 0.5); }
+      .design-content .setting-tools > div small {
+        position: relative;
+        right: 0;
+        float: right;
+        font-weight: 400; }
   .design-content .selected-choice {
     position: absolute;
     top: 5em;
@@ -10045,6 +10052,36 @@ md-tooltip.md-show {
     position: absolute;
     top: 1em;
     right: 1em; }
+
+.button-step {
+  width: 100px;
+  text-align: center; }
+
+.config-step {
+  width: 50px;
+  height: 30px;
+  text-align: center; }
+  .config-step > i {
+    font-size: 0.8em; }
+
+.main-menu {
+  width: 70%;
+  transition: all 0.1s ease-in-out; }
+  .main-menu.shrinked {
+    width: 0;
+    margin-right: 50px; }
+
+.step-menu {
+  width: 70%;
+  transition: all 0.1s ease-in-out; }
+  .step-menu.shrinked {
+    width: 0;
+    margin-right: 50px;
+    display: none; }
+
+.control-menu {
+  cursor: pointer;
+  color: #FFC107; }
 
 html, body {
   width: 100vw;
