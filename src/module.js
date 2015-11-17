@@ -1,1 +1,1 @@
-var $module = angular.module('app', ['ui.router','ngMaterial', 'angularMoment']);
+var $module = angular.module('app', ['ui.router','ngMaterial', 'angularMoment', 'ngAnimate']);

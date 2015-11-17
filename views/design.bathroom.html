@@ -1,0 +1,14 @@
+<div class="design-content">
+    <div class="image-container">
+        <img ng-src="{{bathroomImage}}">
+    </div>
+    <div class="setting-tools">
+        <div layout="row" layout-align="start center">
+            <div ng-repeat="style in styles" ng-click="setStyle(style)" class="material-set" ng-style="{'background-color': style.color}">
+                <md-tooltip md-direction="top">
+                    {{style.name | uppercase}}
+                </md-tooltip>
+            </div>
+        </div>
+    </div>
+</div>

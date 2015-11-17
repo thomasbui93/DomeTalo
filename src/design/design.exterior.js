@@ -3,6 +3,7 @@
  */
 $module.controller('ExteriorController', ['$scope','$rootScope','$state',
     function ($scope, $rootScope, $state) {
+        /*
         $scope.colors = [{
             name: 'red',
             code: '#F44336'
@@ -60,4 +61,25 @@ $module.controller('ExteriorController', ['$scope','$rootScope','$state',
         $scope.toggleAdvance = function () {
             $scope.isAdvance = !$scope.isAdvance;
         };
+        */
+        $scope.options= {
+            blanko: ['brown', 'grey', 'white'],
+            prima: ['grey', 'red', 'white'],
+            tabloid: ['grey', 'red', 'white']
+        };
+
+        if($rootScope.client.model!==null){
+            $scope.exteriorImage = "images/exterior/"+$rootScope.client.model+"_white.jpg";
+            $scope.colors = $scope.options[$rootScope.client.model];
+        }else {
+            $scope.exteriorImage = "images/exterior/prima_white.jpg";
+            $scope.colors = $scope.options['prima'];
+        }
+
+
+
+        $scope.setColor = function (color) {
+            $scope.exteriorImage = "images/exterior/"+$rootScope.client.model+"_"+color+".jpg";
+            $rootScope.client.exterior = color;
+        }
     }]);

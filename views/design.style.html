@@ -1,0 +1,45 @@
+<div class="margin-top">
+    <h1 class="md-title text-center">Choose your style</h1>
+    <div layout="row" layout-align="center center" layout-padding>
+        <md-card class="model-card">
+            <img src="images/style-classic.jpg" class="md-card-image" alt="Style Classic">
+            <div class="md-actions" layout="row">
+                <div flex="33"  layout="row" layout-align="center center">
+                    <div class="model-title">Classic Style</div>
+                </div>
+                <div flex>
+                </div>
+                <div flex="33" >
+                    <md-button class="md-primary" ng-click="chooseStyle($event, 'classic')">Choose</md-button>
+                </div>
+            </div>
+        </md-card>
+        <md-card class="model-card">
+            <img src="images/style-modern.jpg" class="md-card-image" alt="Style Classic">
+            <div class="md-actions" layout="row">
+                <div flex="33"  layout="row" layout-align="center center">
+                    <div class="model-title">Classic Style</div>
+                </div>
+                <div flex>
+                </div>
+                <div flex="33" >
+                    <md-button class="md-primary" ng-click="chooseStyle($event, 'modern')">Choose</md-button>
+                </div>
+            </div>
+        </md-card>
+        <md-card class="model-card">
+            <img src="images/style-romantic.jpg" class="md-card-image" alt="Style Classic">
+            <div class="md-actions" layout="row">
+                <div flex="33"  layout="row" layout-align="center center">
+                    <div class="model-title">Classic Style</div>
+                </div>
+                <div flex>
+                </div>
+                <div flex="33" >
+                    <md-button class="md-primary" ng-click="chooseStyle($event, 'romantic')">Choose</md-button>
+                </div>
+            </div>
+        </md-card>
+    </div>
+    <md-button class="pull-right md-primary md-raised" ng-disabled="style===undefined" ng-click="book()"> Book</md-button>
+</div>

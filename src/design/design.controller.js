@@ -6,15 +6,7 @@ $module.controller('DesignController', ['$scope','$rootScope','$state','$mdToast
     function($scope, $rootScope, $state, $mdToast, NotificationServices, $mdDialog) {
        $scope.states = [
            {
-               name: 'model',
-               done: false
-           },
-           {
-               name: 'exterior',
-               done: false
-           },
-           {
-               name: 'package',
+               name: 'bathroom',
                done: false
            },
            {

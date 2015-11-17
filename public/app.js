@@ -1,6 +1,6 @@
 (function(undefined){
 
-var $module = angular.module('app', ['ui.router','ngMaterial', 'angularMoment']);
+var $module = angular.module('app', ['ui.router','ngMaterial', 'angularMoment', 'ngAnimate']);
 $module.config(['$stateProvider','$mdThemingProvider',
 	function($stateProvider, $mdThemingProvider) {
 		$mdThemingProvider.theme('default')
@@ -31,12 +31,31 @@ $module.config(['$stateProvider','$mdThemingProvider',
 					}
 				}
 			},
+			'design.questionnaire':{
+				url: '/questionnaire',
+				views: {
+					'design':{
+						templateUrl: '/design.questionnaire.html',
+						controller: 'QuestionnaireController'
+					}
+				}
+
+			},
 			'design.exterior':{
 				url: '/exterior',
 				views: {
 					'design':{
 						templateUrl: '/design.exterior.html',
 						controller: 'ExteriorController'
+					}
+				}
+			},
+			'design.style':{
+				url: '/style',
+				views: {
+					'design':{
+						templateUrl: '/design.style.html',
+						controller: 'StyleController'
 					}
 				}
 			},
@@ -84,6 +103,15 @@ $module.config(['$stateProvider','$mdThemingProvider',
 						controller: 'AppointmentController'
 					}
 				}
+			},
+			'design.bathroom':{
+				url: '/bathroom',
+				views: {
+					'design':{
+						templateUrl: '/design.bathroom.html',
+						controller: 'BathroomController'
+					}
+				}
 			}
 		};
 
@@ -91,6 +119,32 @@ $module.config(['$stateProvider','$mdThemingProvider',
 			$stateProvider.state(name, config);
 		});
 	}
+]);
+/**
+ * Created by thoma on 11/17/2015.
+ */
+$module.controller('BathroomController', ['$scope',
+    function ($scope) {
+        $scope.bathroomImage = 'images/bathroom/mind.jpg';
+        $scope.styles = [
+            {
+                name: 'mind',
+                color: 'grey'
+            },
+            {
+                name: 'alto',
+                color: 'white'
+            },
+            {
+                name: 'loft',
+                color: '#ccc'
+            }
+        ];
+
+        $scope.setStyle = function (style) {
+            $scope.bathroomImage = 'images/bathroom/'+ style.name+'.jpg';
+        }
+    }
 ]);
 /**
  * Created by thoma on 10/25/2015.
@@ -168,15 +222,7 @@ $module.controller('DesignController', ['$scope','$rootScope','$state','$mdToast
     function($scope, $rootScope, $state, $mdToast, NotificationServices, $mdDialog) {
        $scope.states = [
            {
-               name: 'model',
-               done: false
-           },
-           {
-               name: 'exterior',
-               done: false
-           },
-           {
-               name: 'package',
+               name: 'bathroom',
                done: false
            },
            {
@@ -364,6 +410,7 @@ $module.controller('DesignController', ['$scope','$rootScope','$state','$mdToast
  */
 $module.controller('ExteriorController', ['$scope','$rootScope','$state',
     function ($scope, $rootScope, $state) {
+        /*
         $scope.colors = [{
             name: 'red',
             code: '#F44336'
@@ -421,6 +468,27 @@ $module.controller('ExteriorController', ['$scope','$rootScope','$state',
         $scope.toggleAdvance = function () {
             $scope.isAdvance = !$scope.isAdvance;
         };
+        */
+        $scope.options= {
+            blanko: ['brown', 'grey', 'white'],
+            prima: ['grey', 'red', 'white'],
+            tabloid: ['grey', 'red', 'white']
+        };
+
+        if($rootScope.client.model!==null){
+            $scope.exteriorImage = "images/exterior/"+$rootScope.client.model+"_white.jpg";
+            $scope.colors = $scope.options[$rootScope.client.model];
+        }else {
+            $scope.exteriorImage = "images/exterior/prima_white.jpg";
+            $scope.colors = $scope.options['prima'];
+        }
+
+
+
+        $scope.setColor = function (color) {
+            $scope.exteriorImage = "images/exterior/"+$rootScope.client.model+"_"+color+".jpg";
+            $rootScope.client.exterior = color;
+        }
     }]);
 /**
  * Created by thoma on 10/22/2015.
@@ -571,6 +639,31 @@ $module.controller('PersonalController', ['$scope','$rootScope','$state',
     function ($scope, $rootScope, $state) {
         $scope.user = {};
     }]);
+/**
+ * Created by thoma on 11/16/2015.
+ */
+$module.controller('QuestionnaireController', ['$scope',
+    function ($scope) {
+        $scope.questionnaire ={
+            familySize: '1'
+        }
+    }
+]);
+/**
+ * Created by thoma on 11/17/2015.
+ */
+$module.controller('StyleController', ['$scope','$state',
+    function ($scope, $state) {
+        $scope.chooseStyle = function ($event, color) {
+            $scope.style = color;
+        }
+        $scope.book = function () {
+            if($scope.style!== undefined){
+                $state.go('design.appointment');
+            }
+        }
+    }
+]);
 /**
  * Created by thoma on 10/23/2015.
  */

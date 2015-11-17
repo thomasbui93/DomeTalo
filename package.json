@@ -36,6 +36,6 @@
     "url": "git@github.com:thomasbui93/DomeTalo.git"
   },
   "engines": {
-    "node": "0.12.7"
-  },
+    "node": "0..7"
+  }
 }

@@ -1,4 +1,5 @@
 <div class="design-content">
+    <!--
     <div class="slide-container" ng-style="{'width': colors.length*100+'vw', 'transform': 'translateX(-'+indexExterior*100+'vw)'}">
         <div class="image-container" ng-repeat="exteriorImage in exteriorImages">
             <img ng-src="{{exteriorImage}}"/>
@@ -41,4 +42,17 @@
     <md-button class="md-raised md-primary" ng-click="setExterior($event)">
         Next
     </md-button>
+    --->
+    <div class="image-container">
+        <img ng-src="{{exteriorImage}}">
+    </div>
+    <div class="setting-tools">
+        <div layout="row" layout-align="start center">
+            <div ng-repeat="color in colors" ng-click="setColor(color)" class="material-set" ng-style="{'background-color': color}">
+                <md-tooltip md-direction="top">
+                    {{color | uppercase}}
+                </md-tooltip>
+            </div>
+        </div>
+    </div>
 </div>

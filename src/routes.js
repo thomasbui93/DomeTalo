@@ -28,12 +28,31 @@ $module.config(['$stateProvider','$mdThemingProvider',
 					}
 				}
 			},
+			'design.questionnaire':{
+				url: '/questionnaire',
+				views: {
+					'design':{
+						templateUrl: '/design.questionnaire.html',
+						controller: 'QuestionnaireController'
+					}
+				}
+
+			},
 			'design.exterior':{
 				url: '/exterior',
 				views: {
 					'design':{
 						templateUrl: '/design.exterior.html',
 						controller: 'ExteriorController'
+					}
+				}
+			},
+			'design.style':{
+				url: '/style',
+				views: {
+					'design':{
+						templateUrl: '/design.style.html',
+						controller: 'StyleController'
 					}
 				}
 			},
@@ -79,6 +98,15 @@ $module.config(['$stateProvider','$mdThemingProvider',
 					'design': {
 						templateUrl: '/design.appointment.html',
 						controller: 'AppointmentController'
+					}
+				}
+			},
+			'design.bathroom':{
+				url: '/bathroom',
+				views: {
+					'design':{
+						templateUrl: '/design.bathroom.html',
+						controller: 'BathroomController'
 					}
 				}
 			}

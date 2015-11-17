@@ -23,6 +23,9 @@ html, body{
   margin: 0.5em;
   color: #3F51B5;
 }
+.text-center{
+  text-align: center;
+}
 button i{
   vertical-align: middle;
 }
@@ -40,11 +43,72 @@ md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-ta
   color: black
 }
 div[ui-view="design"]{
-  position: relative;
+  position: absolute;
   overflow-x: hidden;
   display: table;
   height: auto;
   width: 100vw;
-  min-height:80vh;
-  top: 10vh;
+  min-height:100vh;
+  top: 0
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eaeaea;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+.material-icons{
+  vertical-align: middle;
+}
+.margin-top{
+  margin-top: 100px
+}
+.pull-right{
+  float: right;
+  right: 4em;
+}
+
+
+#design.ng-enter, #design.ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+}
+
+#design.ng-enter {
+  opacity: 0;
+  -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5);
+}
+
+#design.ng-enter-active {
+  opacity: 1;
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+}
+
+#design.ng-leave {
+  opacity: 1;
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+#design.ng-leave-active {
+  opacity: 0;
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
 }
